@@ -1,0 +1,307 @@
+# ADU Builder - Copilot Instructions
+
+> **Purpose**: Guidelines for AI assistance and developers working on this project.
+
+---
+
+## 🏗️ Project Overview
+
+**Project Name**: ADU Builder  
+**Repository**: https://github.com/odanree/ADU-builder  
+**Owner**: odanree  
+**Purpose**: Intelligent ADU (Accessory Dwelling Unit) builder and cost calculator  
+**Status**: 🚧 **IN DEVELOPMENT** (0% - Project Setup Phase)
+
+---
+
+## 🛠️ Tech Stack
+
+- **Runtime**: Node.js 18+
+- **Language**: TypeScript (strict mode)
+- **Module System**: ES Modules (`"type": "module"` in package.json)
+- **Framework**: Express.js
+- **Deployment**: Vercel, Docker
+- **Development**: ts-node with ESM loader (`node --loader ts-node/esm`)
+
+---
+
+## 📂 Project Structure
+
+```
+ADU-builder/
+├── .github/                      # GitHub config
+├── src/
+│   ├── api/                     # Express server
+│   ├── calculator/              # Cost calculation logic
+│   ├── integrations/            # External service integrations
+│   ├── utils/                   # Utility functions
+│   └── types/                   # TypeScript types & interfaces
+├── public/                       # Static files
+├── tests/                        # Test files
+├── docs/                         # Documentation
+├── deploy/                       # Deployment configs
+├── Dockerfile                    # Docker configuration
+├── package.json                  # Dependencies & scripts
+├── tsconfig.json                # TypeScript config (ESM support)
+└── README.md                     # Project documentation
+```
+
+---
+
+## 🚀 Getting Started
+
+### Install Dependencies
+```bash
+npm install
+```
+
+### Development Server
+```bash
+npm run dev
+```
+Server runs on `http://localhost:3000` with API endpoints.
+
+### Build for Production
+```bash
+npm run build
+npm start
+```
+
+---
+
+## 🌍 Environment Variables
+
+**File**: `.env.local` (NOT committed to git)
+
+```bash
+# Server Configuration
+PORT=3000
+NODE_ENV=development
+
+# Add other environment variables as needed
+# API_KEY=...
+# DATABASE_URL=...
+```
+
+---
+
+## 📝 Code Style & Standards
+
+### TypeScript
+- **Strict Mode**: Always enabled
+- **Type Annotations**: Explicit for all function parameters and returns
+- **Example**:
+  ```typescript
+  export async function calculateCost(sqft: number, bedrooms: number): Promise<number> {
+    const cost: number = sqft * 150 + bedrooms * 5000;
+    return cost;
+  }
+  ```
+
+### ES Modules
+- Use `.js` extension in imports (for ES module resolution)
+- No CommonJS `require()` statements
+- **Example**:
+  ```typescript
+  import express from 'express';
+  import { calculateCost } from '../calculator/index.js';
+  ```
+
+### Imports
+- Absolute imports from project root are preferred
+- Use destructuring for clarity
+- Group imports: third-party, then local
+
+### Formatting
+- 2-space indentation
+- Semi-colons required
+- No unused imports (use `npm run lint` to check)
+
+---
+
+## 🌿 Git Workflow
+
+### Branch Strategy
+```
+main (production)
+  ↑
+dev (development)
+  ↑
+feature/* (feature branches)
+```
+
+### Conventional Commits
+**Format**: `type(scope): description`
+
+**Types**:
+- `feat:` - New feature
+- `fix:` - Bug fix
+- `docs:` - Documentation
+- `test:` - Tests
+- `chore:` - Maintenance
+- `refactor:` - Code refactoring
+
+**Example**:
+```bash
+git commit -m "feat(calculator): implement cost calculation
+
+- Add square footage calculation
+- Include material costs
+- Add labor estimates
+
+Refs #1"
+```
+
+### Workflow Steps
+1. Create feature branch from `dev`: `git checkout -b feat/feature-name`
+2. Make changes and commit with conventional format
+3. Push to GitHub: `git push -u origin feat/feature-name`
+4. Create PR from `feat/feature-name` → `dev`
+5. After approval, merge to `dev`
+6. Create PR from `dev` → `main` for production
+7. After approval and CI/CD passes, merge to `main`
+
+---
+
+## 🧪 Testing
+
+### Run Tests
+```bash
+npm test
+```
+
+### Test Coverage
+```bash
+npm test -- --coverage
+```
+
+### E2E Tests (Future)
+```bash
+npm run test:e2e
+```
+
+---
+
+## 🚢 Deployment
+
+### Vercel Deployment
+Production deployment is automatic on `main` branch merge.
+
+**Configuration**: `deploy/vercel.json`
+
+```bash
+vercel --prod
+```
+
+### Docker Deployment
+```bash
+docker build -t adu-builder .
+docker run -p 3000:3000 adu-builder
+```
+
+---
+
+## 📋 Development Checklist
+
+When starting work on a feature:
+
+- [ ] Create feature branch: `git checkout -b feat/xxx`
+- [ ] Install dependencies: `npm install`
+- [ ] Start dev server: `npm run dev`
+- [ ] Make changes with TypeScript strict mode
+- [ ] Test locally: `npm test`
+- [ ] Lint and format: `npm run lint`
+- [ ] Commit with conventional format
+- [ ] Push and create PR to `dev`
+- [ ] Wait for CI/CD to pass
+- [ ] Request code review
+- [ ] Merge after approval
+
+---
+
+## 🆘 Common Issues
+
+### Issue: "Cannot find module 'express'"
+**Solution**: Run `npm install` first
+
+### Issue: TypeScript errors with ES modules
+**Solution**: Ensure imports use `.js` extension and tsconfig.json has `"module": "ESNext"`
+
+### Issue: `npm run dev` fails with deprecation warnings
+**Solution**: Warnings are expected with ts-node/esm. They don't affect functionality.
+
+### Issue: Port 3000 already in use
+**Solution**: Change PORT in `.env.local` or kill process on port 3000
+
+---
+
+## 📚 Resources
+
+- **TypeScript**: https://www.typescriptlang.org
+- **Express.js**: https://expressjs.com
+- **Vercel Docs**: https://vercel.com/docs
+- **Node.js ESM**: https://nodejs.org/api/esm.html
+
+---
+
+## 🤖 AI Assistant Context
+
+### What AI Should Know
+
+**When working with this project:**
+1. All code must be TypeScript with strict mode
+2. Use ES modules exclusively (no CommonJS)
+3. Import paths must include `.js` extension
+4. Follow conventional commit format
+5. Always add type annotations to function parameters and returns
+6. Use `.env.local` for sensitive data (never commit)
+7. Run `npm run dev` to test changes locally
+
+**Common Tasks:**
+- **New Feature**: Create `feat/xxx` branch, implement in TypeScript, test, commit, push, create PR
+- **Bug Fix**: Create `fix/xxx` branch, reproduce, fix, test, commit, push, create PR
+- **API Route**: Add to `src/api/index.ts`, implement handler, add types, test
+- **Integration**: Create new file in `src/integrations/xxx.ts`, add types, export functions, test
+- **Deployment**: Merge to `main`, Vercel auto-deploys
+- **Documentation**: Always create in `docs/` folder, NOT in root directory
+
+**Documentation Rules:**
+- ⚠️ **DO NOT** create markdown files in root directory
+- ⚠️ **DO NOT** create phase summaries, completion reports, or session summaries
+- ⚠️ **DO NOT** create temporary planning documents (use ROADMAP.md instead)
+- ⚠️ **DO NOT** create duplicate setup/deployment guides
+- ✅ **DO** create feature documentation in `docs/` folder (e.g., CALCULATOR_GUIDE.md)
+- ✅ **DO** create setup guides for integrations (e.g., API_SETUP.md)
+- ✅ **DO** create operational runbooks (e.g., PRODUCTION_RUNBOOK.md)
+- ✅ **KEEP MARKDOWN FILES CONCISE**: No markdown file should take longer than 10 minutes to read (target ~1,500 words max)
+  - Break long docs into multiple files
+  - Use clear headings, bullet points, and tables
+- Root should only have: `README.md`, `ROADMAP.md`, `INDEX.md`
+- Organize docs by category: `docs/api/`, `docs/architecture/`, `docs/guides/`, etc.
+- Archive old docs in `docs/archive/` before deleting
+
+**Project Status Tracking:**
+- ⚠️ **DO NOT** create separate phase/completion/summary reports
+- ⚠️ **DO NOT** create status dashboard files (use GitHub Projects instead)
+- ✅ **DO** update `ROADMAP.md` for project status and milestones
+- ✅ **DO** use commit messages to document work (conventional commit format with detailed body)
+- ✅ **DO** use PR descriptions for detailed change summaries
+- After work completes: Update `ROADMAP.md` only, don't create new report files
+
+**Files NOT to Modify**:
+- `.env.local` (user-specific, not in git)
+- `node_modules/` (generated)
+- `dist/` (build output)
+- `.vercel/` (deployment cache)
+
+---
+
+## 📞 Support
+
+**GitHub Issues**: https://github.com/odanree/ADU-builder/issues  
+**Documentation**: See `docs/` folder  
+
+---
+
+**Last Updated**: November 5, 2025  
+**Status**: Initial setup, ready for development
