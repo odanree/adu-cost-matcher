@@ -2,10 +2,11 @@
 
 A reverse ADU cost calculator - **you set the budget, we show you what you can build**. Instead of designing first and discovering unaffordable costs, start with your cost/sqft target and see exactly what ADU features, materials, and finishes fit your budget.
 
-**Status**: 🚧 In Development (Architecture Redesigned)  
-**Version**: v0.3.0  
-**Project Progress**: 5% Complete (Planning Phase)  
-**Documentation**: See [ROADMAP.md](ROADMAP.md) for timeline | [INDEX.md](INDEX.md) for complete guide | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for technical details
+**Status**: ✅ Production Ready (Phases 1-3 Complete)  
+**Version**: v1.0.0  
+**Project Progress**: 85% Complete (MVP Live, Phase 4 Features Planned)  
+**Live Demo**: https://adu-cost-matcher.vercel.app  
+**Documentation**: See [ROADMAP.md](ROADMAP.md) for timeline | [INDEX.md](INDEX.md) for complete guide | [docs/](docs/) for detailed docs
 
 ---
 
@@ -46,28 +47,27 @@ See [ROADMAP.md - Architecture Decision](ROADMAP.md#-architecture-decision-nov-5
 
 ## ✨ Features
 
-### Current Features (v0.3.0)
-- ✅ Architecture redesigned for cost-first approach
-- ✅ Algorithm designed (cost/sqft → finish level + materials)
-- ✅ Development roadmap updated (4-week timeline)
-
-### Planned Features (v1.0.0 - Week 4)
-- 🚧 **Cost/Sqft Input** - Enter target cost (e.g., $200/sqft)
-- 🚧 **Reverse Calculator** - Shows what ADU you can build at that price
-- 🚧 **Finish Level Detection** - Automatic tier classification (Basic/Standard/Premium)
-- 🚧 **Detailed Breakdown** - Materials, labor, permits, site work, contingency
-- 🚧 **Material Specifications** - Exact flooring, countertops, fixtures at this price point
-- 🚧 **Comparison View** - See Basic vs Standard vs Premium side-by-side
-- 🚧 **Trade-off Explainer** - Understand what's included/excluded
-- 🚧 **Responsive Design** - Mobile-first, works on all devices
-- 🚧 **SEO Optimized** - Ranks for "ADU cost calculator" searches
+### Current Features (v1.0.0 - MVP Live ✅)
+- ✅ **Cost/Sqft Input** - Enter target cost ($100-$500/sqft)
+- ✅ **Reverse Calculator** - Shows what ADU you can build at that price
+- ✅ **Finish Level Detection** - Automatic tier (Basic/Standard/Premium/Luxury)
+- ✅ **Detailed Breakdown** - Materials, labor, permits, site work, contingency
+- ✅ **Material Specifications** - Exact materials based on budget tier
+- ✅ **Cost Allocation** - Shows percentages (Materials 38%, Labor 33%, etc.)
+- ✅ **Interactive UI** - Real-time calculations with 300ms debounce
+- ✅ **Responsive Design** - Mobile-first, works on all devices
+- ✅ **16-Question FAQ** - Educational content with category filtering
+- ✅ **SEO Optimized** - Ranks for "ADU cost calculator" searches
+- ✅ **Performance Optimized** - 87.3 KB First Load JS (code splitting)
+- ✅ **30 Unit Tests** - 100% test pass rate, full algorithm coverage
 
 ### Future Features (v2.0.0+)
 - 🔮 **Location-Based Pricing** - Regional cost multipliers by ZIP code
 - 🔮 **Interactive Sliders** - Adjust materials, see instant cost impact
-- 🔮 **Save Scenarios** - Compare multiple cost options (requires user accounts)
+- 🔮 **Save Scenarios** - Compare multiple cost options (user accounts)
 - 🔮 **PDF Export** - Download detailed cost breakdown
-- 🔮 **Contractor Matching** - Connect with local ADU builders
+- 🔮 **Image Gallery** - Material samples and finishes
+- 🔮 **Contractor Network** - Connect with local ADU builders
 
 ---
 
