@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 export default defineConfig({
   test: {
     globals: true,
-    environment: 'node',
+    environment: 'jsdom',
     setupFiles: [],
     coverage: {
       provider: 'v8',
