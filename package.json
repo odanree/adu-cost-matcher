@@ -1,17 +1,17 @@
 {
-  "name": "adu-builder",
-  "version": "0.1.0",
-  "description": "Intelligent ADU (Accessory Dwelling Unit) builder and cost calculator",
-  "main": "src/api/index.js",
+  "name": "adu-cost-matcher",
+  "version": "0.3.0",
+  "description": "Reverse ADU cost calculator - set budget, see what you can build",
   "type": "module",
   "scripts": {
-    "dev": "node --loader ts-node/esm src/api/index.ts",
-    "build": "tsc",
-    "start": "node dist/api/index.js",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
     "test": "vitest run",
     "test:watch": "vitest watch",
-    "lint": "eslint src --ext .ts",
-    "format": "prettier --write \"src/**/*.ts\""
+    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "analyze": "node scripts/analyze-bundle.mjs"
   },
   "keywords": [
     "adu",
@@ -23,18 +23,25 @@
   "author": "odanree",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "node-fetch": "^3.3.2"
+    "next": "^14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "zod": "^3.22.4",
+    "zustand": "^4.4.1"
   },
   "devDependencies": {
-    "@types/express": "^4.17.21",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/react": "^14.1.2",
     "@types/node": "^20.10.6",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.3.3",
-    "vitest": "^1.1.0",
+    "@types/react": "^18.2.46",
+    "@types/react-dom": "^18.2.18",
+    "@vitest/ui": "^1.1.0",
     "eslint": "^8.56.0",
-    "prettier": "^3.1.1"
+    "eslint-config-next": "^14.0.0",
+    "jsdom": "^27.1.0",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.0"
   },
   "engines": {
     "node": ">=18.0.0",
