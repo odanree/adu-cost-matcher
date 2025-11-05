@@ -2,6 +2,7 @@
 
 import { CostInputForm } from '@/components/CostInputForm';
 import { CostBreakdownDisplay } from '@/components/CostBreakdownDisplay';
+import { FAQ } from '@/components/FAQ';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
         <CostInputForm />
         <CostBreakdownDisplay />
       </div>
+      <FAQ />
     </main>
   );
 }
