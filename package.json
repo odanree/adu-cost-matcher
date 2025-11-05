@@ -2,7 +2,6 @@
   "name": "adu-cost-matcher",
   "version": "0.3.0",
   "description": "Reverse ADU cost calculator - set budget, see what you can build",
-  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
