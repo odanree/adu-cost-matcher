@@ -6,6 +6,7 @@ A reverse ADU cost calculator - **you set the budget, we show you what you can b
 **Version**: v1.0.0  
 **Project Progress**: 85% Complete (MVP Live, Phase 4 Features Planned)  
 **Live Demo**: https://adu-cost-matcher.vercel.app  
+**Deployment**: [![Vercel](https://img.shields.io/badge/Vercel-Live-success?style=flat&logo=vercel)](https://adu-cost-matcher.vercel.app)  
 **Documentation**: See [ROADMAP.md](ROADMAP.md) for timeline | [INDEX.md](INDEX.md) for complete guide | [docs/](docs/) for detailed docs
 
 ---
