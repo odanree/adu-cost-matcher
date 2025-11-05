@@ -1,15 +1,3 @@
-{{
-
-  "framework": "nextjs"  "buildCommand": "npm run build",
-
-}  "outputDirectory": ".next",
-
-  "env": {
-    "NODE_ENV": "production"
-  },
-  "github": {
-    "silent": true,
-    "autoAlias": true,
-    "enabled": true
-  }
+{
+  "framework": "nextjs"
 }
