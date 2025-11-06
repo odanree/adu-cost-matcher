@@ -116,7 +116,7 @@ export function CostInputForm() {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>ADU Cost Matcher v1.0</h2>
+      <h2 className={styles.title}>ADU Cost Matcher</h2>
       <p className={styles.subtitle}>
         Set your budget and see what ADU features you can build
       </p>
